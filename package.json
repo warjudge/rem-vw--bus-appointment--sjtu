@@ -1,0 +1,47 @@
+{
+    "name": "pop-h5",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "serve": "set NODE_ENV=development&& vue-cli-service serve",
+        "prev:serve": "set NODE_ENV=preview&& vue-cli-service serve",
+        "test:serve": "set NODE_ENV=test&&vue-cli-service serve",
+        "prod:serve": "set NODE_ENV=production&& vue-cli-service serve",
+        "build": "set NODE_ENV=production&& vue-cli-service build",
+        "prev:build": "set NODE_ENV=preview&& vue-cli-service build",
+        "test:build": "set NODE_ENV=test&&vue-cli-service build",
+        "prod:build": "set NODE_ENV=production&& vue-cli-service build",
+        "lint": "vue-cli-service lint"
+    },
+    "dependencies": {
+        "axios": "^0.19.2",
+        "core-js": "^3.6.4",
+        "mint-ui": "^2.2.13",
+        "style-resources-loader": "^1.4.1",
+        "vant": "^2.5.9",
+        "vue": "^2.6.11",
+        "vue-axios": "^2.1.5",
+        "vue-router": "^3.1.5",
+        "vuex": "^3.1.2",
+        "weixin-js-sdk": "^1.4.0-test"
+    },
+    "devDependencies": {
+        "@vue/cli-plugin-babel": "~4.2.0",
+        "@vue/cli-plugin-eslint": "~4.2.0",
+        "@vue/cli-plugin-router": "~4.2.0",
+        "@vue/cli-service": "~4.2.0",
+        "@vue/eslint-config-standard": "^5.1.0",
+        "babel-eslint": "^10.0.3",
+        "babel-plugin-import": "^1.13.0",
+        "eruda": "^2.2.1",
+        "eslint": "^6.7.2",
+        "eslint-plugin-import": "^2.20.1",
+        "eslint-plugin-node": "^11.0.0",
+        "eslint-plugin-promise": "^4.2.1",
+        "eslint-plugin-standard": "^4.0.0",
+        "eslint-plugin-vue": "^6.1.2",
+        "node-sass": "^4.13.1",
+        "sass-loader": "^8.0.2",
+        "vue-template-compiler": "^2.6.11"
+    }
+}

@@ -1,0 +1,62 @@
+
+// 主题色配置
+$theme-color:#4fc08d;
+
+
+// ---------------纯rem方案
+// 页面最大宽度
+$max-width:1024;
+// rem 单位换算：定为 75px 只是方便运算，750px-75px、640-64px、1080px-108px，如此类推
+$vw_fontsize: 75; // iPhone 6尺寸的根元素大小基准值
+@function rem($px) {
+  @return ($px / $vw_fontsize ) * 1rem;
+}
+// 根元素大小使用 vw 单位
+$vw_design: 750;
+html {
+  @media screen and (max-width: 300px) {
+    font-size: 64px;
+  }
+  @media screen and (min-width: 750px) {
+    font-size: 108px;
+  }
+}
+// ---------------纯rem方案
+
+//  -------------rem结合vw的方式
+//$rootSize: 16!default;
+//$designWidth: 750!default;
+//$designRatio: 2!default;
+//
+//@function rem($px) {
+//  @return $px / $rootSize * 1rem;
+//}
+//@function rootVw() {
+//  @return $rootSize / $designWidth * $designRatio * 100vmin;
+//}
+//html{
+//  font-size: rootVw();
+//}
+// 和直接纯用vw（PC端也想查看，可用vmin）效果一样
+// --------------rem结合vw的方式
+
+
+
+// body 也增加最大最小宽度限制，避免默认100%宽度的 block 元素跟随 body 而过大过小
+// 当设备宽度大于设置的最大页面宽度时，使body居中
+body {
+  max-width: $max-width * 1px;
+  min-width: 300px;
+  @media screen and (min-width: $max-width * 1px) {
+    margin: 0 auto;
+  }
+}
+
+
+// 当设备宽度大于设置的最大页面宽度 且 页面中存在fixed定位时，由于body居中，故需要使被定位的元素也居中
+@mixin fixedCenter {
+  @media screen and (min-width: $max-width * 1px) {
+    left: 50%;
+    margin-left: -1 * ($max-width / 2) * 1px;
+  }
+}
